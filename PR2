@@ -1,66 +1,175 @@
-# --- Q1: Simple Print vs f-string ---
-name = input("Q1 Enter Name: ")
-age = input("Q1 Enter Age: ")
-print("Simple Print:", name, "is", age, "years old.")
-print(f"f-string: {name} is {age} years old.")
 
-# --- Q2: Numeric Input Handling ---
-n1 = float(input("Q2 Enter first number: "))
-n2 = float(input("Q2 Enter second number: "))
-print(f"Add: {n1+n2}, Sub: {n1-n2}, Mul: {n1*n2}, Div: {n1/n2}")
+# ==========================================================
+# Question 1: Formatted vs Simple Output
+# ==========================================================
+print("--- Question 1 ---")
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))
 
-# --- Q3: Expression Evaluation ---
-a, b, c = 10, 20, 4
-s = a + b + c
-avg = s / 3
-expr = (a + b) * c / 2
-print(f"Q3 -> Sum: {s}, Avg: {avg:.2f}, Result: {expr}")
+# Simple print
+print("Simple Print -> Name:", name, "| Age:", age)
 
-# --- Q4: Operator Precedence Analysis ---
-print("Q4 -> 10 + 5 * 2 =", 10 + 5 * 2)
-print("Q4 -> (10 + 5) * 2 =", (10 + 5) * 2)
-print("Q4 -> 100 / 5 + 3 * 2 =", 100 / 5 + 3 * 2)
+# Formatted string (f-string)
+print(f"F-string     -> My name is {name} and I am {age} years old.")
 
-# --- Q5: Salary Breakdown ---
-basic = float(input("Q5 Enter Basic Salary: "))
+
+# ==========================================================
+# Question 2: Numeric Input Handling
+# ==========================================================
+print("\n--- Question 2 ---")
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+
+print("Addition is:", a + b)
+print("Subtraction is:", a - b)
+print("Multiplication is:", a * b)
+print("Division is:", a / b)
+
+
+# ==========================================================
+# Question 3: Expression Evaluation
+# ==========================================================
+print("\n--- Question 3 ---")
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+num3 = float(input("Enter third number: "))
+
+sum_val = num1 + num2 + num3
+avg = sum_val / 3
+expression = (num1 + num2) * num3 / 2
+
+print(f"Sum = {sum_val}")
+print(f"Average = {avg:.2f}")
+print(f"Expression ((a + b) * c / 2) = {expression:.2f}")
+
+
+# ==========================================================
+# Question 4: Operator Precedence Analysis
+# ==========================================================
+print("\n--- Question 4 ---")
+# Precedence: * and / have higher priority than + and -
+print("10 + 5 * 2       =", 10 + 5 * 2)          # 10 + 10 = 20
+print("(10 + 5) * 2     =", (10 + 5) * 2)        # 15 * 2 = 30
+print("100 / 5 + 3 * 2  =", 100 / 5 + 3 * 2)     # 20.0 + 6 = 26.0
+
+
+# ==========================================================
+# Question 5: Real-Life Calculation - Salary Breakdown
+# ==========================================================
+print("\n--- Question 5 ---")
+basic = float(input("Enter Basic Salary: "))
+
 hra = basic * 0.20
 da = basic * 0.10
 net_salary = basic + hra + da
-print(f"Q5 -> Basic: {basic}, HRA: {hra}, DA: {da}, Net Salary: {net_salary}")
 
-# --- Q6: Area and Perimeter Calculator ---
-length, width = 10, 5
-radius = 7
-rect_area = length * width
-rect_peri = 2 * (length + width)
-circ_area = 3.14159 * (radius ** 2)
-circ_peri = 2 * 3.14159 * radius
-print(f"Q6 Rectangle -> Area: {rect_area}, Perimeter: {rect_peri}")
-print(f"Q6 Circle -> Area: {circ_area:.2f}, Circumference: {circ_peri:.2f}")
+print("\nSalary Breakdown:")
+print(f"Basic Salary : {basic:.2f}")
+print(f"HRA (20%)    : {hra:.2f}")
+print(f"DA (10%)     : {da:.2f}")
+print(f"Net Salary   : {net_salary:.2f}")
 
-# --- Q7: Unit Conversion Tool ---
-km = 5
-celsius = 30
-rupees = 1000
-print(f"Q7 -> {km} km = {km * 1000} m")
-print(f"Q7 -> {celsius}°C = {(celsius * 9/5) + 32}°F")
-print(f"Q7 -> ₹{rupees} = ${rupees / 83.0:.2f}")
 
-# --- Q8: Multi-Input Single-Line Processing ---
-x, y, z = map(int, input("Q8 Enter 3 numbers separated by space: ").split())
-print(f"Q8 -> Sum: {x + y + z}, Product: {x * y * z}")
+# ==========================================================
+# Question 6: Area and Perimeter Calculator
+# ==========================================================
+print("\n--- Question 6 ---")
+# Rectangle
+length = float(input("Enter Rectangle Length: "))
+breadth = float(input("Enter Rectangle Breadth: "))
 
-# --- Q9: Expression-Based Grading System ---
-m1, m2, m3 = 85, 78, 92
-total_marks = m1 + m2 + m3
-per = total_marks / 3
-grade = "A" if per >= 75 else ("B" if per >= 50 else "Fail")
-print(f"Q9 -> Total: {total_marks}, Percentage: {per:.2f}%, Grade: {grade}")
+area_rect = length * breadth
+perimeter_rect = 2 * (length + breadth)
 
-# --- Q10: Error Analysis in Expressions ---
-divisor = 0
-if divisor != 0:
-    print(10 / divisor)
+print(f"Rectangle Area     : {area_rect:.2f}")
+print(f"Rectangle Perimeter: {perimeter_rect:.2f}")
+
+# Circle
+radius = float(input("\nEnter Circle Radius: "))
+area_circle = math.pi * (radius ** 2)
+circumference = 2 * math.pi * radius
+
+print(f"Circle Area         : {area_circle:.2f}")
+print(f"Circle Circumference: {circumference:.2f}")
+
+
+# ==========================================================
+# Question 7: Unit Conversion Tool
+# ==========================================================
+print("\n--- Question 7 ---")
+km = float(input("Enter distance in kilometers: "))
+celsius = float(input("Enter temperature in Celsius: "))
+rupees = float(input("Enter amount in Rupees: "))
+
+# Conversions
+meters = km * 1000
+fahrenheit = (celsius * 9 / 5) + 32
+dollars = rupees / 85  # Example fixed rate: 1 USD = 85 INR
+
+print(f"Meters     : {meters} m")
+print(f"Fahrenheit : {fahrenheit:.2f} °F")
+print(f"US Dollars : ${dollars:.2f}")
+
+
+# ==========================================================
+# Question 8: Multi-input Single-Line Processing
+# ==========================================================
+print("\n--- Question 8 ---")
+x, y, z = map(int, input("Enter three space-separated numbers: ").split())
+
+print("Sum     :", x + y + z)
+print("Product :", x * y * z)
+print(f"Numbers entered are {x}, {y}, and {z}")
+
+
+# ==========================================================
+# Question 9: Expression-Based Grading System
+# ==========================================================
+print("\n--- Question 9 ---")
+m1 = float(input("Enter marks of subject 1: "))
+m2 = float(input("Enter marks of subject 2: "))
+m3 = float(input("Enter marks of subject 3: "))
+
+total = m1 + m2 + m3
+percentage = total / 3
+
+if percentage >= 90:
+    grade = "A+"
+elif percentage >= 80:
+    grade = "A"
+elif percentage >= 70:
+    grade = "B"
+elif percentage >= 60:
+    grade = "C"
+elif percentage >= 40:
+    grade = "D"
 else:
-    print("Q10 -> Handled: Cannot divide by zero.")
-print("Q10 -> Fixed String + Int:", "Age: " + str(18))
+    grade = "Fail"
+
+print(f"Total Marks : {total:.2f}")
+print(f"Percentage  : {percentage:.2f}%")
+print(f"Grade       : {grade}")
+
+
+# ==========================================================
+# Question 10: Error Analysis in Expressions
+# ==========================================================
+print("\n--- Question 10 ---")
+# Division by zero handling
+try:
+    num_a = int(input("Enter a number: "))
+    num_b = int(input("Enter divisor: "))
+    print("Result:", num_a / num_b)
+except ZeroDivisionError:
+    print("Error: Division by zero is not allowed.")
+
+# String + number handling
+try:
+    s = "10"
+    n = 5
+    print(s + n)
+except TypeError:
+    print("Error: Cannot concatenate string and integer directly.")
+    print("Correct Way (casting):", int(s) + n)
+
+
