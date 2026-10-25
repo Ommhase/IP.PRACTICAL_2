@@ -1,0 +1,66 @@
+# --- Q1: Simple Print vs f-string ---
+name = input("Q1 Enter Name: ")
+age = input("Q1 Enter Age: ")
+print("Simple Print:", name, "is", age, "years old.")
+print(f"f-string: {name} is {age} years old.")
+
+# --- Q2: Numeric Input Handling ---
+n1 = float(input("Q2 Enter first number: "))
+n2 = float(input("Q2 Enter second number: "))
+print(f"Add: {n1+n2}, Sub: {n1-n2}, Mul: {n1*n2}, Div: {n1/n2}")
+
+# --- Q3: Expression Evaluation ---
+a, b, c = 10, 20, 4
+s = a + b + c
+avg = s / 3
+expr = (a + b) * c / 2
+print(f"Q3 -> Sum: {s}, Avg: {avg:.2f}, Result: {expr}")
+
+# --- Q4: Operator Precedence Analysis ---
+print("Q4 -> 10 + 5 * 2 =", 10 + 5 * 2)
+print("Q4 -> (10 + 5) * 2 =", (10 + 5) * 2)
+print("Q4 -> 100 / 5 + 3 * 2 =", 100 / 5 + 3 * 2)
+
+# --- Q5: Salary Breakdown ---
+basic = float(input("Q5 Enter Basic Salary: "))
+hra = basic * 0.20
+da = basic * 0.10
+net_salary = basic + hra + da
+print(f"Q5 -> Basic: {basic}, HRA: {hra}, DA: {da}, Net Salary: {net_salary}")
+
+# --- Q6: Area and Perimeter Calculator ---
+length, width = 10, 5
+radius = 7
+rect_area = length * width
+rect_peri = 2 * (length + width)
+circ_area = 3.14159 * (radius ** 2)
+circ_peri = 2 * 3.14159 * radius
+print(f"Q6 Rectangle -> Area: {rect_area}, Perimeter: {rect_peri}")
+print(f"Q6 Circle -> Area: {circ_area:.2f}, Circumference: {circ_peri:.2f}")
+
+# --- Q7: Unit Conversion Tool ---
+km = 5
+celsius = 30
+rupees = 1000
+print(f"Q7 -> {km} km = {km * 1000} m")
+print(f"Q7 -> {celsius}°C = {(celsius * 9/5) + 32}°F")
+print(f"Q7 -> ₹{rupees} = ${rupees / 83.0:.2f}")
+
+# --- Q8: Multi-Input Single-Line Processing ---
+x, y, z = map(int, input("Q8 Enter 3 numbers separated by space: ").split())
+print(f"Q8 -> Sum: {x + y + z}, Product: {x * y * z}")
+
+# --- Q9: Expression-Based Grading System ---
+m1, m2, m3 = 85, 78, 92
+total_marks = m1 + m2 + m3
+per = total_marks / 3
+grade = "A" if per >= 75 else ("B" if per >= 50 else "Fail")
+print(f"Q9 -> Total: {total_marks}, Percentage: {per:.2f}%, Grade: {grade}")
+
+# --- Q10: Error Analysis in Expressions ---
+divisor = 0
+if divisor != 0:
+    print(10 / divisor)
+else:
+    print("Q10 -> Handled: Cannot divide by zero.")
+print("Q10 -> Fixed String + Int:", "Age: " + str(18))
