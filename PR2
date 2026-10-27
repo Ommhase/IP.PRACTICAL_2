@@ -1,175 +1,185 @@
+<!-- ==========================================================
+     PRACTICAL 2: HYPERLINKS, TABLES AND SEMANTIC TAGS
+     ========================================================== -->
 
-# ==========================================================
-# Question 1: Formatted vs Simple Output
-# ==========================================================
-print("--- Question 1 ---")
-name = input("Enter your name: ")
-age = int(input("Enter your age: "))
-
-# Simple print
-print("Simple Print -> Name:", name, "| Age:", age)
-
-# Formatted string (f-string)
-print(f"F-string     -> My name is {name} and I am {age} years old.")
-
-
-# ==========================================================
-# Question 2: Numeric Input Handling
-# ==========================================================
-print("\n--- Question 2 ---")
-a = int(input("Enter first number: "))
-b = int(input("Enter second number: "))
-
-print("Addition is:", a + b)
-print("Subtraction is:", a - b)
-print("Multiplication is:", a * b)
-print("Division is:", a / b)
-
-
-# ==========================================================
-# Question 3: Expression Evaluation
-# ==========================================================
-print("\n--- Question 3 ---")
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
-num3 = float(input("Enter third number: "))
-
-sum_val = num1 + num2 + num3
-avg = sum_val / 3
-expression = (num1 + num2) * num3 / 2
-
-print(f"Sum = {sum_val}")
-print(f"Average = {avg:.2f}")
-print(f"Expression ((a + b) * c / 2) = {expression:.2f}")
+<!-- ==========================================================
+     Question 1: Semantic Page Structure
+     ========================================================== -->
+<header>
+    <h1>Emerging Technologies Portal</h1>
+</header>
+<nav>
+    <a href="#ai">AI</a> | <a href="#cloud">Cloud</a> | <a href="#cyber">Cyber Security</a>
+</nav>
+<main>
+    <section id="ai">
+        <h2>Artificial Intelligence</h2>
+        <p>Machines performing tasks that need human intelligence.</p>
+    </section>
+    <section id="cloud">
+        <h2>Cloud Computing</h2>
+        <p>Computing services over the internet.</p>
+    </section>
+    <section id="cyber">
+        <h2>Cyber Security</h2>
+        <p>Protecting systems and data.</p>
+    </section>
+</main>
+<footer id="contact">
+    Contact: <a href="mailto:info@example.com">info@example.com</a>
+</footer>
 
 
-# ==========================================================
-# Question 4: Operator Precedence Analysis
-# ==========================================================
-print("\n--- Question 4 ---")
-# Precedence: * and / have higher priority than + and -
-print("10 + 5 * 2       =", 10 + 5 * 2)          # 10 + 10 = 20
-print("(10 + 5) * 2     =", (10 + 5) * 2)        # 15 * 2 = 30
-print("100 / 5 + 3 * 2  =", 100 / 5 + 3 * 2)     # 20.0 + 6 = 26.0
+<!-- ==========================================================
+     Question 2: Internal Hyperlinks
+     ========================================================== -->
+<a href="#contact">Go to Contact</a>
 
 
-# ==========================================================
-# Question 5: Real-Life Calculation - Salary Breakdown
-# ==========================================================
-print("\n--- Question 5 ---")
-basic = float(input("Enter Basic Salary: "))
-
-hra = basic * 0.20
-da = basic * 0.10
-net_salary = basic + hra + da
-
-print("\nSalary Breakdown:")
-print(f"Basic Salary : {basic:.2f}")
-print(f"HRA (20%)    : {hra:.2f}")
-print(f"DA (10%)     : {da:.2f}")
-print(f"Net Salary   : {net_salary:.2f}")
+<!-- ==========================================================
+     Question 3: External Hyperlink
+     ========================================================== -->
+<a href="https://www.example.com" target="_blank" rel="noopener noreferrer">Visit Example Website</a>
 
 
-# ==========================================================
-# Question 6: Area and Perimeter Calculator
-# ==========================================================
-print("\n--- Question 6 ---")
-# Rectangle
-length = float(input("Enter Rectangle Length: "))
-breadth = float(input("Enter Rectangle Breadth: "))
-
-area_rect = length * breadth
-perimeter_rect = 2 * (length + breadth)
-
-print(f"Rectangle Area     : {area_rect:.2f}")
-print(f"Rectangle Perimeter: {perimeter_rect:.2f}")
-
-# Circle
-radius = float(input("\nEnter Circle Radius: "))
-area_circle = math.pi * (radius ** 2)
-circumference = 2 * math.pi * radius
-
-print(f"Circle Area         : {area_circle:.2f}")
-print(f"Circle Circumference: {circumference:.2f}")
-
-
-# ==========================================================
-# Question 7: Unit Conversion Tool
-# ==========================================================
-print("\n--- Question 7 ---")
-km = float(input("Enter distance in kilometers: "))
-celsius = float(input("Enter temperature in Celsius: "))
-rupees = float(input("Enter amount in Rupees: "))
-
-# Conversions
-meters = km * 1000
-fahrenheit = (celsius * 9 / 5) + 32
-dollars = rupees / 85  # Example fixed rate: 1 USD = 85 INR
-
-print(f"Meters     : {meters} m")
-print(f"Fahrenheit : {fahrenheit:.2f} °F")
-print(f"US Dollars : ${dollars:.2f}")
+<!-- ==========================================================
+     Question 4: Technology Information Table
+     ========================================================== -->
+<table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Technology</th>
+            <th>Category</th>
+            <th>Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Artificial Intelligence</td>
+            <td>Software</td>
+            <td>1956</td>
+        </tr>
+        <tr>
+            <td>Cloud Computing</td>
+            <td>Infrastructure</td>
+            <td>2006</td>
+        </tr>
+        <tr>
+            <td>Cyber Security</td>
+            <td>Security</td>
+            <td>1990</td>
+        </tr>
+        <tr>
+            <td>Internet of Things</td>
+            <td>Networking</td>
+            <td>1999</td>
+        </tr>
+    </tbody>
+</table>
 
 
-# ==========================================================
-# Question 8: Multi-input Single-Line Processing
-# ==========================================================
-print("\n--- Question 8 ---")
-x, y, z = map(int, input("Enter three space-separated numbers: ").split())
+<!-- ==========================================================
+     Question 5: Contact Section
+     ========================================================== -->
+<section id="contact-info">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+    <p>Phone: <a href="tel:9876543210">9876543210</a></p>
+</section>
 
-print("Sum     :", x + y + z)
-print("Product :", x * y * z)
-print(f"Numbers entered are {x}, {y}, and {z}")
+ ==========================================================
+   Whole Combined Code (practical2.html)
+ ==========================================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology Portal</title>
+</head>
+<body>
+    <header>
+        <h1>Emerging Technologies Portal</h1>
+        <p>Learn about modern technologies</p>
+    </header>
 
+    <nav>
+        <a href="#ai">AI</a> |
+        <a href="#cloud">Cloud</a> |
+        <a href="#cyber">Cyber Security</a> |
+        <a href="#iot">IoT</a> |
+        <a href="#technology-table">Table</a> |
+        <a href="#contact">Contact</a> |
+        <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">Example Website</a>
+    </nav>
 
-# ==========================================================
-# Question 9: Expression-Based Grading System
-# ==========================================================
-print("\n--- Question 9 ---")
-m1 = float(input("Enter marks of subject 1: "))
-m2 = float(input("Enter marks of subject 2: "))
-m3 = float(input("Enter marks of subject 3: "))
+    <main>
+        <section id="ai">
+            <h2>Artificial Intelligence</h2>
+            <p>Machines performing tasks that need human intelligence.</p>
+        </section>
 
-total = m1 + m2 + m3
-percentage = total / 3
+        <section id="cloud">
+            <h2>Cloud Computing</h2>
+            <p>Computing services delivered over the internet.</p>
+        </section>
 
-if percentage >= 90:
-    grade = "A+"
-elif percentage >= 80:
-    grade = "A"
-elif percentage >= 70:
-    grade = "B"
-elif percentage >= 60:
-    grade = "C"
-elif percentage >= 40:
-    grade = "D"
-else:
-    grade = "Fail"
+        <section id="cyber">
+            <h2>Cyber Security</h2>
+            <p>Protecting computers, networks and information.</p>
+        </section>
 
-print(f"Total Marks : {total:.2f}")
-print(f"Percentage  : {percentage:.2f}%")
-print(f"Grade       : {grade}")
+        <section id="iot">
+            <h2>Internet of Things</h2>
+            <p>Connected devices collect and exchange data.</p>
+        </section>
 
+        <section id="technology-table">
+            <h2>Technology Information</h2>
+            <table border="1" cellpadding="8" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Technology</th>
+                        <th>Category</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Artificial Intelligence</td>
+                        <td>Software</td>
+                        <td>1956</td>
+                    </tr>
+                    <tr>
+                        <td>Cloud Computing</td>
+                        <td>Infrastructure</td>
+                        <td>2006</td>
+                    </tr>
+                    <tr>
+                        <td>Cyber Security</td>
+                        <td>Security</td>
+                        <td>1990</td>
+                    </tr>
+                    <tr>
+                        <td>Internet of Things</td>
+                        <td>Networking</td>
+                        <td>1999</td>
+                    </tr>
+                    <tr>
+                        <td>Blockchain</td>
+                        <td>Distributed ledger</td>
+                        <td>2008</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
 
-# ==========================================================
-# Question 10: Error Analysis in Expressions
-# ==========================================================
-print("\n--- Question 10 ---")
-# Division by zero handling
-try:
-    num_a = int(input("Enter a number: "))
-    num_b = int(input("Enter divisor: "))
-    print("Result:", num_a / num_b)
-except ZeroDivisionError:
-    print("Error: Division by zero is not allowed.")
-
-# String + number handling
-try:
-    s = "10"
-    n = 5
-    print(s + n)
-except TypeError:
-    print("Error: Cannot concatenate string and integer directly.")
-    print("Correct Way (casting):", int(s) + n)
-
+    <footer id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+        <p>Phone: <a href="tel:9876543210">9876543210</a></p>
+    </footer>
+</body>
+</html>
 
